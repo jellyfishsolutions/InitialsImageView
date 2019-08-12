@@ -114,6 +114,9 @@ extension UIImageView {
 }
 
 private func initialsFromString(string: String) -> String {
+    if string.starts(with: "#") {
+        return "#"
+    }
     var nameComponents = string.uppercased().components(separatedBy: CharacterSet.letters.inverted)
     nameComponents.removeAll(where: {$0.isEmpty})
     
